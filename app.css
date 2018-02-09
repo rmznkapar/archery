@@ -30,7 +30,6 @@ html,body{
 #bow-arrow{
 	width:75px;
 	height: 75px;
-	display: block;
 	position: relative;
 	transform: rotateZ(45deg);
 	-webkit-animation: bow  4s infinite; /* Safari 4.0 - 8.0 */
