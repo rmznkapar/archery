@@ -1,1 +1,44 @@
-"Hello World" 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html charset=utf-8" />
+	<meta name="content-language" content="tr" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vue.JS App</title>
+	<link rel="stylesheet" type="text/css" href="app.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+
+
+<div id="box">
+
+<div id="appBox" v-on:click="fire()">
+
+	<div id="game-over-menu" v-if="gameOver">
+		<center>
+			<p>Score:{{score}}</p>
+			<button style="padding: 20px;" v-on:click="restart()">Restart</button>
+		</center>
+	</div>
+	<div v-if="!gameOver" id="playground">
+		<div id="score">Score:{{score}} Remaining Arrow:{{remainingArrow}} {{targetPosition}}</div>
+
+		<div id="bow-arrow" ref="bow_arrow">
+			<object data="bow-and-arrow.svg" type="image/svg+xml"></object>
+		</div>
+
+		<div id="target-box" ref="target_box" v-bind:style="{ top: targetPosition + 'px'}">		
+			<div id="target" ref="target"></div>
+			<div id="target-red" ref="target_red"></div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
